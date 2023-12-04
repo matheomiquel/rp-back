@@ -11,7 +11,7 @@ export class UserController implements TController {
 
   init(): void {
     this.server.get("/", (request: FastifyRequest, reply: FastifyReply) => {
-      console.log("tutu")
+      console.log("tutu");
       reply.code(200).send({ message: "el toto" });
     });
   }
