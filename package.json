@@ -1,0 +1,35 @@
+{
+  "name": "rp-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "module-alias": "^2.2.3",
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "dependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "fastify": "^4.24.3"
+  },
+  "scripts": {
+    "dev": "nodemon ./src/app.ts",
+    "lint": "eslint \"**/*.ts\" --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheomiquel/rp-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheomiquel/rp-back/issues"
+  },
+  "homepage": "https://github.com/matheomiquel/rp-back#readme"
+}
