@@ -2,7 +2,7 @@ import { UserController } from "@controller/route/user";
 import Fastify from "fastify";
 
 const fastify = Fastify({
-  logger: true
+  logger: false
 });
 
 const userController = new UserController({ server: fastify });
