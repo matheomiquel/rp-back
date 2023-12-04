@@ -10,4 +10,4 @@ userController.init();
 
 fastify.listen({ port: 3000 });
 
-console.log("nopa lala");
+console.log("nopa lalaaaa");
