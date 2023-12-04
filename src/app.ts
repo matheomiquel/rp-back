@@ -9,5 +9,3 @@ const userController = new UserController({ server: fastify });
 userController.init();
 
 fastify.listen({ port: 3000 });
-
-console.log("nop");
