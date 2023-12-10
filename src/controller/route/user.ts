@@ -1,21 +1,30 @@
-import { UserDomain } from "@src/domain/user/implementation/user";
-import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-
 import { IController } from "../interface";
+import { UserPreValidation } from "../middleware/pre-validation/user/user";
+import { UserController } from "../service";
+import { HTTPMethods } from "../type/http-method";
+import { TCreateRoute } from "./create-route";
 
-export class UserController implements IController {
-  private readonly server: FastifyInstance;
+export class UserRoute implements IController {
+  private readonly createRoute: TCreateRoute;
 
-  private readonly userDomain: UserDomain;
+  private readonly userController: UserController;
 
-  constructor({ server, userDomain }: { server: FastifyInstance, userDomain: UserDomain }) {
-    this.server = server;
-    this.userDomain = userDomain;
+  constructor(
+    { createRoute, userController }:
+      { createRoute: TCreateRoute, userController: UserController }
+  ) {
+    this.createRoute = createRoute;
+    this.userController = userController;
   }
 
-  init(): void {
-    this.server.get("/", (_request: FastifyRequest, reply: FastifyReply) => {
-      reply.code(200).send(this.userDomain.getUser());
+  init() {
+    this.createRoute.createHttpRoute({
+      method: HTTPMethods.POST,
+      path: "/user",
+      preValidation: [UserPreValidation.createUser],
+      preHandler: [],
+      context: this.userController,
+      handler: this.userController.register
     });
   }
 }

@@ -1,5 +1,5 @@
 import { UserDto } from "@domain/dto/user";
 
 export interface IUserRepository {
-  getUser(): UserDto
+  getUser(userDto: UserDto): Promise<UserDto>
 }

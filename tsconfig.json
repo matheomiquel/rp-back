@@ -20,8 +20,8 @@
       "@domain/*": [
         "./domain/*"
       ],
-      "@data/*": [
-        "./data/*"
+      "@repository/*": [
+        "./repository/*"
       ],
       "@test/*": [
         "./__test__/*"

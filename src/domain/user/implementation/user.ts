@@ -9,7 +9,7 @@ export class UserDomain implements IUserDomain {
     this.userRepoSitory = userRepoSitory;
   }
 
-  getUser(): UserDto {
-    return this.userRepoSitory.getUser();
+  getUser(userDto: UserDto): Promise<UserDto> {
+    return this.userRepoSitory.getUser(userDto);
   }
 }
